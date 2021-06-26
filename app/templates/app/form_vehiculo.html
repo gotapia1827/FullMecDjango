@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{% static 'app/css/styles.css' %}">   
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
+    <title>Document</title>    
+</head>
+<body>
+    <!-- Menu-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a href="/form_vehiculo"><img src="{% static 'app/img/logo.png' %}" class="logo-brand" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ ">Pagina Principal</a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/modificar_vehiculo">Modificar Asistencia</a>
+                    </li>
+                </ul>                                  
+            </div>                        
+        </div>
+    </nav>
+    <!-- Speach-->
+    <section id="ini">
+        <duv class="container">
+            <div class="content-center">
+                <h1 class="mt-5" id="a">La nueva forma de buscar un mecánico</h1>             
+            </div>
+        </duv>
+    </section>
+    <!--Ingresar-->
+    <section class="bgLightGrey">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Ingresar nueva asistencia</h1>
+                    <br>
+                    <h3>El registro de asistencia utilizado por FullMec puede ser:</h3>
+                    <h4>Nueva asistencia vehicular (Auto - Suv - Hatchback - Sedan)</h4>
+                    <br>
+                </div>
+                <div class="col-md-12">
+                    <form method="post" action="" id="formulario">
+                        {% csrf_token %}          
+                        <div class="form-group">
+                        {{ form.as_table }}
+                        </div>
+
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-success" id="enviar" value="Enviar">
+                            <input type="reset" class="btn btn-danger" id="limpiar" value="Limpiar">
+                        </div>
+                        <div class="alert alert-succes" role="alert">
+                            {{mensaje}}
+                        </div>
+                    </form>                      
+                </div>
+            </div>
+    </section>  
+    <!-- Footer-->
+    <footer class="bgDark">
+        <div class="container">
+            <img src="{% static 'app/img/logo.png' %}" class="logo-brand" alt="logo">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/instagram.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/twitter.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/youtube.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/dribbble.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/facebook.svg' %}" class="img-fluid"></a></li>
+            </ul>
+            <small>Copyright © 2020 FullMec. Todos los derechos reservados.</small>
+        </div>
+    </footer>       
+</body>
+</html>

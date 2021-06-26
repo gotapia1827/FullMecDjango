@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href= "{% static 'app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href= "{% static 'app/css/styles.css' %}">   
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Pagina Taller Mecanico</title>
+</head>
+
+<body>
+    <!-- Menu-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a href="#ini"><img src="{% static 'app/img/logo.png' %}" class="logo-brand" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Trabajos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Mecanicos</a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonial">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contactanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/form_vehiculo">Nueva Asistencia</a>
+                    </li>
+                </ul>
+                <!--buscar-->
+                <button class="btn btn-dark my-2 my-sm-0" type="submit">Buscar</button> 
+                <form class="form-inline">
+                    <input class="form-buscar mr-sm-2" type="text" id="txtbuscar" />              
+                </form>                    
+            </div>
+            <!--Login-->         
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="btnlogin">Login</button>
+            <div id="id01" class="modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header alert-dark">
+                            <h5 class="modal-title">"Ingresa al Portal"</h5>                        
+                        </div>
+                    <div class="modal-body">
+                        <img src="{% static 'app/img/login.png' %}" class="img-fluid pb-md-2" id="img01">
+                        <br>
+                        <form role="form">
+                        <div class="form-group">                         
+                            <label for="">Usuario:</label>
+                            <input type="text" class="form-control"/>
+                        </div>
+                        <div class="form-group">                         
+                            <label for="">Password:</label>
+                            <input type="password3" class="form-control"/>
+                        </div>
+                        </form>                  
+                    </div>
+                        <div class="modal-footer alert-dark">
+                            <button type="submit">Ingresa</button>
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember"> Recuerda me
+                            </label>   
+                            <!-- Cerrar-->
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Registrar-->
+            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="btnlogin">Registro</button>
+            <div id="id02" class="modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header alert-dark">
+                            <h5 class="modal-title">"Registrate al Portal"</h5>                        
+                        </div>
+                        <div class="modal-body">
+                            <img src="{% static 'app/img/iniciar.png' %}" class="img-fluid pb-md-2" id="img02">
+                            <h6>  </h6>
+                            <form role="form">
+                            <div class="form-group">                         
+                                <label for="">Nombre:</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="form-group">                         
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control"/>
+                            </div>    
+                            <div class="form-group">                         
+                                <label for="">Password:</label>
+                                <input type="password1" class="form-control"/>
+                            </div>
+                            <div class="form-group">                         
+                                <label for="">Repetir Password:</label>
+                                <input type="password2" class="form-control"/>
+                            </div>
+                            </form>                  
+                        </div>
+                        <div class="modal-footer alert-dark">
+                            <button type="submit">Aceptar</button>                   
+                            <!-- Cerrar-->
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>                
+        </div>
+    </nav>
+    <!-- Speach-->
+    <section id="ini">
+        <duv class="container">
+            <div class="content-center">
+                <h1 class="mt-5" id="a">La nueva forma de buscar un mecánico</h1>             
+            </div>
+        </duv>
+    </section>
+    <!-- Servicios-->
+    <section id="portfolio">
+        <div class="container-fluid">
+            <div class="content-center">
+                <h2>Nuestros Servicios</h2>
+                <h3>“Felicidad garantizada, trabajamos con profesionales, garantizamos nuestro trabajo y te protegemos con un seguro”.</h3>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="portfolio-container">
+                        <div class="portfolio-details">
+                            <a href="#">
+                                <h2 id="abb">Analisis de parametros</h2>
+                            </a>
+                            <a href="#">
+                                <p id="ac">Modelo: Mancast</p>
+                            </a>
+                        </div>
+                        <img src="{% static 'app/img/img01.jpg' %}" class="img-fluid" alt="Portfolio 01">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="portfolio-container">
+                        <div class="portfolio-details">
+                            <a href="#">
+                                <h2 id="abb">Analisis de motor</h2>
+                            </a>
+                            <a href="#">
+                                <p id="ac">Modelo: Subaru</p>
+                            </a>
+                        </div>
+                        <img src="{% static 'app/img/img02.jpg' %}" class="img-fluid" alt="Portfolio 02">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="portfolio-container">
+                        <div class="portfolio-details">
+                            <a href="#">
+                                <h2 id="abb">Cambio de partes</h2>
+                            </a>
+                            <a href="#">
+                                <p id="ac">Modelo: Neumatec</p>
+                            </a>
+                        </div>
+                        <img src="{% static 'app/img/img03.jpg' %}" class="img-fluid" alt="Portfolio 03">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="portfolio-container">
+                        <div class="portfolio-details">
+                            <a href="#">
+                                <h2 id="abb">Cambio de liquidos</h2>
+                            </a>
+                            <a href="#">
+                                <p id="ac">Modelo: liqui moly</p>
+                            </a>
+                        </div>
+                        <img src="{% static 'app/img/img04.jpg' %}" class="img-fluid" alt="Portfolio 04">
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </section>
+    <!--Mecanicos-->
+    <section id="team" class="bgLightGrey">
+        <div class="container">
+            <div class="content-center">
+                <h2>Nuestros Mecanicos</h2>
+                <h3>Atendemos la mayoría de las marcas y modelos</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="member-container">
+                        <div class="member-details">
+                            <h5>Juan Torres</h5>
+                            <span>Mecanico</span>                                      
+                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                Trabajos
+                            </button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h3 class="modal-title" id="exampleModalLabel">Trabajos Realizados</h3>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-4">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Tipo</th>
+                                                        <th>Material</th>
+                                                        <th>Estado</th>
+                                                        <th>Fecha</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Camion</td>
+                                                        <td>Neumaticos</td>
+                                                        <td>Reparado</td>
+                                                        <td>18/03/2021</td>                            
+                                                    </tr>
+                                                    <tr class="table-active">
+                                                        <td>Automovil</td>
+                                                        <td>Aceite</td>
+                                                        <td>Reparado</td>
+                                                        <td>14/05/2021</td>                            
+                                                    </tr>
+                                                    <tr class="table-success">
+                                                        <td>Automovil</td>
+                                                        <td>Filtro</td>
+                                                        <td>Reparado</td>
+                                                        <td>25/09/2021</td>                            
+                                                    </tr>
+                                                    <tr class="table-warning">
+                                                        <td>Camioneta</td>
+                                                        <td>Bujias</td>
+                                                        <td>Reparado</td>
+                                                        <td>08/10/2020</td>                            
+                                                    </tr>
+                                                    <tr class="table-danger">
+                                                        <td>Automovil</td>
+                                                        <td>Escape</td>
+                                                        <td>Espera</td>
+                                                        <td>10/11/2020</td>                            
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div> 
+                        </div>
+                        <img src="{% static 'app/img/member-03.jpg' %}" class="img-fluid" alt="member 1">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="member-container">
+                        <div class="member-details">
+                            <h5>Elias Figueroa</h5>
+                            <span>Mecanico</span>
+                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                Trabajos
+                            </button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h3 class="modal-title" id="exampleModalLabel">Trabajos Realizados</h3>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">                                    
+                                        <div class="col-md-4">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Tipo</th>
+                                                        <th>Material</th>
+                                                        <th>Estado</th>
+                                                        <th>Fecha</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Moto</td>                                                        
+                                                        <td>Llantas</td>
+                                                        <td>Reparado</td>
+                                                        <td>23/01/2021</td>                            
+                                                    </tr>
+                                                    <tr class="table-active">
+                                                        <td>Camion</td>
+                                                        <td>Pistones</td>
+                                                        <td>Reparado</td>
+                                                        <td>25/02/2020</td>                            
+                                                    </tr>
+                                                    <tr class="table-success">
+                                                        <td>Automovil</td>
+                                                        <td>Aceite</td>
+                                                        <td>Reparado</td>
+                                                        <td>18/03/2021</td>                            
+                                                    </tr>
+                                                    <tr class="table-warning">
+                                                        <td>Moto</td>
+                                                        <td>Bujias</td>
+                                                        <td>Reparado</td>
+                                                        <td>24/05/2020</td>                            
+                                                    </tr>
+                                                    <tr class="table-danger">
+                                                        <td>Camion</td>
+                                                        <td>Motor</td>
+                                                        <td>Reparado</td>
+                                                        <td>09/06/2020</td>                            
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>            
+                        </div>
+                        <img src="{% static 'app/img/member-03.jpg' %}" class="img-fluid" alt="member 1">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="member-container">
+                        <div class="member-details">
+                            <h5>Pablo Vargas</h5>
+                            <span>Mecanico</span>
+                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                Trabajos
+                            </button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h3 class="modal-title" id="exampleModalLabel">Trabajos Realizados</h3>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-4">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Tipo</th>
+                                                        <th>Material</th>
+                                                        <th>Estado</th>
+                                                        <th>Fecha</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Automovil</td>
+                                                        <td>Alternador</td>
+                                                        <td>Reparado</td>
+                                                        <td>05/01/2020</td>                            
+                                                    </tr>
+                                                    <tr class="table-active">
+                                                        <td>Camioneta</td>
+                                                        <td>Neumaticos</td>
+                                                        <td>Reparado</td>
+                                                        <td>10/02/2020</td>                            
+                                                    </tr>
+                                                    <tr class="table-success">
+                                                        <td>Moto</td>
+                                                        <td>Aceite</td>
+                                                        <td>Reparado</td>
+                                                        <td>21/02/2020</td>                            
+                                                    </tr>
+                                                    <tr class="table-warning">
+                                                        <td>Camion</td>
+                                                        <td>Bujias</td>
+                                                        <td>Reparado</td>
+                                                        <td>03/03/2020</td>                            
+                                                    </tr>
+                                                    <tr class="table-danger">
+                                                        <td>Automovil</td>
+                                                        <td>Gases</td>
+                                                        <td>Reparado</td>
+                                                        <td>07/04/2020</td>                            
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>              
+                        </div>
+                        <img src="{% static 'app/img/member-03.jpg' %}" class="img-fluid" alt="member 1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Menu-->
+    <section id="testimonial" class="divider">
+        <div class="container">
+            <div class="content-center">
+                <h2>Nuestros Clientes</h2>
+                <h3>Sus comentarios...</h3>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-container">
+                            <p>Excelente servicio por todo el personal y un buen trabajo en el vehiculo
+                            </p>                                                  
+                            <div class="testimonial-user">
+                                <div class="row">
+                                    <div class="col-md-3 col-3">
+                                        <img src="{% static 'app/img/member-03.jpg' %}" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-md-9 col-9">
+                                        <h6>Maritza Mesa</h6>
+                                        <span>Subaru Impresa</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-container">
+                            <p>Excelente servicio por todo el personal y un buen trabajo en el vehiculo
+                            </p>                                                  
+                            <div class="testimonial-user">
+                                <div class="row">
+                                    <div class="col-md-3 col-3">
+                                        <img src="{% static 'app/img/member-03.jpg' %}" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-md-9 col-9">
+                                        <h6>Maritza Mesa</h6>
+                                        <span>Subaru Impresa</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-container">
+                            <p>Excelente servicio por todo el personal y un buen trabajo en el vehiculo
+                            </p>                                                  
+                            <div class="testimonial-user">
+                                <div class="row">
+                                    <div class="col-md-3 col-3">
+                                        <img src="{% static 'app/img/member-03.jpg' %}" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-md-9 col-9">
+                                        <h6>Maritza Mesa</h6>
+                                        <span>Subaru Impresa</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <div class="control-button">
+                        <img src="{% static 'app/img/arrow-borderless-left.svg' %}" class="img-fluid">
+                    </div>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <div class="control-button">
+                        <img src="{% static 'app/img/arrow-borderless-right.svg' %}" class="img-fluid">
+                    </div>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
+        </div>
+    </section>    
+    <!--Contacto-->
+    <section id="contact" class="bgLightGrey">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mt-4">
+                    <h2>Contactanos</h2>
+                    <h3>Si necesitas ayuda con nuestro proceso de reserva o simplemente quieres decirnos lo bueno 
+                        que era tu mecánico, estaremos siempre encantados de ayudarte.</h3>
+                </div>
+                <div class="col-md-6 mt-4">
+                    <form id="form-contacto" class="needs-validation">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="Nombre" placeholder="Nombre" minlength="3" required> 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="Apellido" placeholder="Apellido" minlength="3" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="Email" placeholder="Email" required> 
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="NombreEmpresa" placeholder="Nombre de Empresa" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="Telefono" placeholder="Numero de contacto" minlength="9" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="btn btn-primary full-width" type="submit">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bgDark">
+        <div class="container">
+            <img src="{% static 'app/img/logo.png' %}" class="logo-brand" alt="logo">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/instagram.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/twitter.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/youtube.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/dribbble.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/facebook.svg' %}" class="img-fluid"></a></li>
+            </ul>
+            <small>Copyright © 2020 FullMec. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+    <!--JavaScript -->
+    <script src="{% static 'app/js/popper.min.js' %}"></script>
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'app/js/auto.js' %}"></script>     
+    <script src="{% static 'app/js/jquery.js' %}"></script>
+    <script src="{% static 'app/js/jquery.min.js' %}"></script>
+    <script src="{% static 'app/js/jquery.validate.js' %}"></script>
+
+    <script>
+        var modal = document.getElementById('id01');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+          {
+            modal.style.display = "none";
+          }
+        }
+    </script>
+
+    <script>
+    $(function(){
+        $("#form-contacto").validate(
+            {
+                rules: {
+                    Nombre: {
+                        required: true
+                    },
+
+                    Apellido: {
+                        required: true
+                    },
+                    Email: {
+                        required: true,
+                        Email: true
+                    },
+                    NombreEmpresa: {
+                        required: true
+                    },
+                    Telefono: {
+                        required: true
+                    }
+                },
+                messages: {
+                    Nombre: {
+                        required: 'Ingresa tu nombre',
+                        minlength: 'mínimo 3 caracteres'
+                    },
+                    Apellido:
+                    {
+                        required: "Ingresa tu apellido",
+                        minlength: "mínimo 3 caracteres" 
+                    },
+                    Email: {
+                        required: "Ingresa tu EMail",
+                        Email: "formato de correo no válido"
+                    },
+                    NombreEmpresa: {
+                        required: "Ingresa el nombre de tu empresa"
+                    },
+                    Telefono: {
+                        required: "Ingresa tu teléfono"
+                    }
+                }
+            });
+    });
+    </script>
+
+    <script>
+        (function() {"use strict";
+        window.addEventListener("load", function() {
+        var forms = document.getElementsByClassName("needs-validation");
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener("submit", function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+    
+</body>
+</html>

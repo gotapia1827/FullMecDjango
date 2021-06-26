@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{% static 'app/css/styles.css' %}">   
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
+    <title>Document</title>    
+</head>
+<body>
+    <!-- Menu-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a href="/form_vehiculo"><img src="{% static 'app/img/logo.png' %}" class="logo-brand" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ ">Pagina Principal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/form_vehiculo">Nueva Asistencia</a>
+                    </li>                    
+                </ul>                                  
+            </div>                        
+        </div>
+    </nav>
+    <!-- Speach-->
+    <section id="ini">
+        <duv class="container">
+            <div class="content-center">
+                <h1 class="mt-5" id="a">La nueva forma de buscar un mecánico</h1>             
+            </div>
+        </duv>
+    </section>
+    <!--Tabla-->
+    <section class="bgLightGrey">
+        <div class="container">
+            <div class="table">
+                <h1>Listado de Vehiculos</h1>
+            </div>
+        </div>     
+            <div class="container">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Patente</th><th scope="col">Marca</th>
+                            <th scope="col">Modelo</th><th scope="col">Opciones</th><th scope="col">Extraer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ve in vehiculos %}
+                        <tr>
+                            <td>{{ve.patente}}</td><td>{{ve.marca}}</td>
+                            <td>{{ve.modelo}}</td>
+                            <td><a href="{% url 'form_mod_vehiculo' ve.patente %}">Modificar</a></td>
+                            <td><a href="{% url 'form_del_vehiculo' ve.patente %}">Eliminar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>                   
+                </table>
+            </div>        
+    </section>
+    <!-- Footer-->
+    <footer class="bgDark">
+        <div class="container">
+            <img src="{% static 'app/img/logo.png' %}" class="logo-brand" alt="logo">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/instagram.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/twitter.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/youtube.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/dribbble.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'app/img/facebook.svg' %}" class="img-fluid"></a></li>
+            </ul>
+            <small>Copyright © 2020 FullMec. Todos los derechos reservados.</small>
+        </div>
+    </footer>       
+</body>
+</html>
