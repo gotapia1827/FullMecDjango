@@ -4,8 +4,8 @@
 ## Comenzando 🚀
 ### Pre-requisitos 📋
 
--Bootstrap
--Django
--CSS
--Api documentada con Swagger
+- Bootstrap.
+- Django
+- CSS
+- Api documentada con Swagger
 
