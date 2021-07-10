@@ -4,8 +4,8 @@
 ## Comenzando 🚀
 ### Pre-requisitos 📋
 
-- Bootstrap.
+- Bootstrap
 - Django
 - CSS
 - Api documentada con Swagger
-
+- BD con Oracle
