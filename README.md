@@ -1,6 +1,11 @@
 # FullMecDjango
-Lenguajes utilizados
-Bootstrap
-Django
-CSS
-Api documentada con Swagger
+# Entrega Integración de plataformas
+
+## Comenzando 🚀
+### Pre-requisitos 📋
+
+-Bootstrap
+-Django
+-CSS
+-Api documentada con Swagger
+
